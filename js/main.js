@@ -47,9 +47,6 @@ const divList = document.getElementById('img-container').children;
 //imposto la classe active al primo elemento dell'array
 divList[activeElement].classList.add('active');
 
-console.log(divList);
-
-
 //crea un div
 function createDiv (){
     const div = document.createElement('div');
@@ -83,6 +80,15 @@ function goPrev(){
     divList[activeElement].classList.add('active');
 }; 
 
+//blocca l'autoplay
+function stopAutoPlay(){
+    clearInterval(clock);
+};
+
 //eventi al click dei bottoni per scorrere avanti e indietro
 buttonNext.addEventListener('click', goNext);
 buttonPrev.addEventListener('click', goPrev);
+
+
+//Bonus 2 - autoplay 
+const clock = setInterval(goNext, 3000);
