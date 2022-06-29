@@ -61,13 +61,13 @@ const thumbList = thumbContainer.children;
 thumbList[activeElement].classList.add('active');
 
 //crea un div
-function createDiv (){
+function createDiv() {
     const div = document.createElement('div');
     return div;
 };
 
 //crea un img
-function createImg (){
+function createImg() {
     const img = document.createElement('img');
     return img;
 };
@@ -141,3 +141,14 @@ buttonReverse.addEventListener('click', () =>{
         reverseValue = false;
     }
 });
+
+//interactive thumbnails
+for (let i = 0; i<thumbList.length; i++){
+    thumbList[i].addEventListener('click', () =>{
+        thumbList[activeElement].classList.remove('active');
+        divList[activeElement].classList.remove('active');
+        activeElement = i;
+        thumbList[i].classList.add('active');
+        divList[i].classList.add('active');
+    })   
+}
