@@ -67,13 +67,19 @@ function modifyHTML (div , imgElement){
 function goNext(){
     divList[activeElement].classList.remove('active');
     activeElement++; 
+    if(activeElement === divList.length){
+        activeElement = 0;
+    };
     divList[activeElement].classList.add('active');
 }; 
 
 //permette al carosello di scorrere all'immagine precedente
 function goPrev(){
     divList[activeElement].classList.remove('active');
-    activeElement--; 
+    activeElement--;
+    if(activeElement < 0){
+        activeElement = divList.length - 1;
+    }; 
     divList[activeElement].classList.add('active');
 }; 
 
