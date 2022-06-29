@@ -82,21 +82,25 @@ function modifyHTML (div , imgElement){
 //permette al carosello di scorrere all'immagine successiva
 function goNext(){
     divList[activeElement].classList.remove('active');
+    thumbList[activeElement].classList.remove('active');
     activeElement++; 
     if(activeElement === divList.length){
         activeElement = 0;
     };
     divList[activeElement].classList.add('active');
+    thumbList[activeElement].classList.add('active');
 }; 
 
 //permette al carosello di scorrere all'immagine precedente
 function goPrev(){
     divList[activeElement].classList.remove('active');
+    thumbList[activeElement].classList.remove('active');
     activeElement--;
     if(activeElement < 0){
         activeElement = divList.length - 1;
     }; 
     divList[activeElement].classList.add('active');
+    thumbList[activeElement].classList.add('active');
 }; 
 
 //blocca l'autoplay
