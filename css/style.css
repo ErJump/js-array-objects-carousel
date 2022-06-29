@@ -1,5 +1,8 @@
-.carousel-wrapper .carousel-img-container img{
-    /* display: none; */
+.carousel-img-container div{
+    /* display: none; */    
+}
+
+.carousel-img-container div >img{
     height: 100%;
     object-fit: cover;
     object-position: bottom;
@@ -21,9 +24,6 @@
     background-color: black;
 }
 
-#carousel-selector-container div.active{
-    border: 5px solid #0B5ED7;
-}
 
 #next-button{
     top: 50%;
