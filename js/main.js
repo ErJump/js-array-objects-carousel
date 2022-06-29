@@ -29,6 +29,7 @@ const images = [
 ];
 
 const imgContainer = document.getElementById('img-container');
+const thumbContainer = document.getElementById('thumb-container');
 const buttonNext = document.getElementById('next-button');
 const buttonPrev = document.getElementById('previous-button');
 const buttonStartStop = document.getElementById('start-stop-button');
@@ -42,17 +43,33 @@ images.forEach((element) =>{
     const newDiv = createDiv();
     modifyHTML(newDiv, element); 
     imgContainer.append(newDiv);
+
+    //thumbnail
+    const newImg = createImg();
+    newImg.setAttribute('src', element.url);
+    thumbContainer.append(newImg);
 });
 
 //prendo tutti i figli dell'img container
-const divList = document.getElementById('img-container').children;
+const divList = imgContainer.children;
 //imposto la classe active al primo elemento dell'array
 divList[activeElement].classList.add('active');
+
+//prendo tutti i figli del thumb container
+const thumbList = thumbContainer.children;
+//imposto la classe active al primo elemento dell'array
+thumbList[activeElement].classList.add('active');
 
 //crea un div
 function createDiv (){
     const div = document.createElement('div');
     return div;
+};
+
+//crea un img
+function createImg (){
+    const img = document.createElement('img');
+    return img;
 };
 
 //modifica innerHtml del div con un template e lo popola con i valori dell'array di items
@@ -109,7 +126,6 @@ buttonStartStop.addEventListener('click', () =>{
 });
 
 //Reverse Autoplay
-
 let reverseValue = false;
 buttonReverse.addEventListener('click', () =>{
     stopAutoPlay();

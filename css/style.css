@@ -3,7 +3,7 @@
 }
 
 .carousel-img-container div >img{
-    height: 600px;
+    height: 675px;
     width: 100%;
     object-fit: cover;
     object-position: bottom;
@@ -53,5 +53,18 @@ div h5{
 
 .ms_text_shadow{
     text-shadow: 2px 1px black;
+}
+
+#thumb-container img{
+    height: 100px;
+    width: 10%;
+    object-fit: cover;
+    object-position: bottom;
+    opacity: .5;
+}
+
+#thumb-container img.active{
+    opacity: 1;
+    border: 2px solid lightskyblue;
 }
 
