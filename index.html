@@ -6,9 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carosello Array di Oggetti</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <main class="py-5">
+        <div class="container">
+            <div class="row" id="number-wrapper">
+                <div class="col-12 carousel-wrapper">
+                    <div class="position-relative w-100">
+                        <button class="btn btn-primary position-absolute" id="previous-button"><i class="bi bi-caret-left-fill"></i></button>
+                        <button class="btn btn-primary position-absolute" id="next-button"><i class="bi bi-caret-right-fill"></i></button>
+                        <div class="carousel-img-container d-flex flex-column mx-auto w-100 mb-3" id="img-container">
+                            <img src="https://picsum.photos/1000/1000" alt="">
+                            <h1 class="position-absolute text-white ms_text_shadow">Ciaone</h1>
+                            <h5 class="position-absolute text-white ms_text_shadow">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt magnam nihil nobis aperiam dolore quos! Porro ipsa aliquid autem? Sunt corrupti minima tenetur officia qui consectetur et similique dolore! Laboriosam.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 <script src="js/main.js"></script>
 </body>
 </html>
