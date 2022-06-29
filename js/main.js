@@ -31,6 +31,8 @@ const images = [
 const imgContainer = document.getElementById('img-container');
 const buttonNext = document.getElementById('next-button');
 const buttonPrev = document.getElementById('previous-button');
+const buttonStartStop = document.getElementById('start-stop-button');
+const buttonReverse = document.getElementById('reverse-button');
 
 //inizializzo a 0 l'elemento attivo del carosello
 let activeElement = 0;
@@ -91,4 +93,31 @@ buttonPrev.addEventListener('click', goPrev);
 
 
 //Bonus 2 - autoplay 
-const clock = setInterval(goNext, 3000);
+let clock = setInterval(goNext, 3000);
+
+//Bonus 3 - Start & Stop
+let checkValue = false;
+
+buttonStartStop.addEventListener('click', () =>{
+    if (checkValue === false){
+        stopAutoPlay();
+        checkValue = true;
+    } else {
+        clock = setInterval(goNext, 3000);
+        checkValue = false;
+    }
+});
+
+//Reverse Autoplay
+
+let reverseValue = false;
+buttonReverse.addEventListener('click', () =>{
+    stopAutoPlay();
+    if (reverseValue === false){
+        clock = setInterval(goPrev, 3000);
+        reverseValue = true;
+    } else {
+        clock = setInterval(goNext, 3000);
+        reverseValue = false;
+    }
+});
