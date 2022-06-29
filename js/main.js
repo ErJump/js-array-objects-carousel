@@ -29,6 +29,11 @@ const images = [
 ];
 
 const imgContainer = document.getElementById('img-container');
+const buttonNext = document.getElementById('next-button');
+const buttonPrev = document.getElementById('previous-button');
+
+//inizializzo a 0 l'elemento attivo del carosello
+let activeElement = 0;
 
 //forEach che popola l'html di elementi 
 images.forEach((element) =>{
@@ -37,15 +42,41 @@ images.forEach((element) =>{
     imgContainer.append(newDiv);
 });
 
+//prendo tutti i figli dell'img container
+const divList = document.getElementById('img-container').children;
+//imposto la classe active al primo elemento dell'array
+divList[activeElement].classList.add('active');
+
+console.log(divList);
+
+
 //crea un div
 function createDiv (){
     const div = document.createElement('div');
     return div;
-}
+};
 
 //modifica innerHtml del div con un template e lo popola con i valori dell'array di items
 function modifyHTML (div , imgElement){
     div.innerHTML = `<img src="${imgElement.url}" alt="image" class="img-fluid">
     <h1 class="position-absolute text-white ms_text_shadow">${imgElement.title}</h1>
     <h5 class="position-absolute text-white ms_text_shadow">${imgElement.description}</h5>`;
-}
+};
+
+//permette al carosello di scorrere all'immagine successiva
+function goNext(){
+    divList[activeElement].classList.remove('active');
+    activeElement++; 
+    divList[activeElement].classList.add('active');
+}; 
+
+//permette al carosello di scorrere all'immagine precedente
+function goPrev(){
+    divList[activeElement].classList.remove('active');
+    activeElement--; 
+    divList[activeElement].classList.add('active');
+}; 
+
+//eventi al click dei bottoni per scorrere avanti e indietro
+buttonNext.addEventListener('click', goNext);
+buttonPrev.addEventListener('click', goPrev);

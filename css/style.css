@@ -1,9 +1,9 @@
 .carousel-img-container div{
-    /* display: none; */    
+    display: none;    
 }
 
 .carousel-img-container div >img{
-    height: 100%;
+    height: 900px;
     object-fit: cover;
     object-position: bottom;
 }
@@ -13,7 +13,7 @@
     width: 100%;
 }
 
-.carousel-wrapper .carousel-img-container img.active{
+.carousel-wrapper .carousel-img-container div.active{
     display: block;
 }
 
