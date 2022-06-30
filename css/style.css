@@ -1,9 +1,18 @@
+*{
+    /* outline: 1px solid red; */
+}
+main{
+    background-color: #2F3133;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+}
+
 .carousel-img-container div{
     display: none;    
 }
 
 .carousel-img-container div >img{
-    height: 675px;
+    height: 720px;
     width: 100%;
     object-fit: cover;
     object-position: bottom;
@@ -37,7 +46,7 @@
 }
 
 .position-relative.w-100{
-    height: 55vh;
+    height: 720px;
 }
 
 div h1{
@@ -55,12 +64,18 @@ div h5{
     text-shadow: 2px 1px black;
 }
 
+#thumb-container{
+    margin-left: .8px;
+}
+
 #thumb-container img{
-    height: 100px;
-    width: 10%;
+    height: 200px;
+    width: 20%;
     object-fit: cover;
     object-position: bottom;
     opacity: .5;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 #thumb-container img:hover{
@@ -69,7 +84,12 @@ div h5{
 
 #thumb-container img.active{
     opacity: 1;
-    border: 2px solid lightskyblue;
+    border: 4px solid lightskyblue;
+}
+
+footer{
+    background-color: #171D20;
+    height: 100px;
 }
 
 
